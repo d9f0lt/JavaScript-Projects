@@ -1,0 +1,53 @@
+@font-face {
+    font-family: 'Digital';
+    src: url(../../assets/fonts/calcfont/digital-7.ttf);
+}
+body {
+    background-color: black;
+    height: 100%;
+    width: 100%;
+}
+.container {
+    height: 100%;
+    position: relative;
+}
+.calc {
+    height: 370px;
+    width: 500px;
+    position: absolute;
+    left: 700px;
+    top: 200px;
+    border: 3px solid grey;
+    padding: 15px;
+    background-color: grey;
+}
+input {
+    width: 490px;
+    height: 50px;
+    font-size: 40px;
+    text-align: right;
+    cursor: default;
+    margin-bottom: 15px;
+}
+button {
+    font-family: 'Digital', monospace;
+    font-weight: 700;
+    font-size: 2em;
+    background-color: white;
+    cursor: pointer;
+    border-radius: 4px;
+    border: none;
+    width: 121px;
+    height: 50px;
+    margin-top: 8px
+}
+.secondarySymbol {
+    background-color: #C7C6C1;
+}
+.secondarySymbol:hover, .primarySymbol:hover {
+    background-color: white;
+    transition: background-color 2s all-ease-out;
+}
+.primarySymbol {
+    background-color: #d9dddc;
+}

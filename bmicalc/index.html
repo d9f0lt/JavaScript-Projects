@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Калькулятор веса</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="panel">
+            <h2 class="text-center">Проверь свой индекс массы</h2>
+                <p id="introText" class="text-center">Введи свой вес и рост и проверь свой индекс массы</p>
+
+                <form >
+                    <div id="weightInput">
+                        <p>Введи свой вес тут</p>
+                    <input type="number" title="weight" name="a" id="weight" pattern="[0-9]*" />
+                    </div>
+                    <div id="heightInput">
+                        <p>Введи свой рост тут</p>
+                        <input type="number" name="b" id="height" title="height" pattern="[0-9]*" />
+                    </div>
+                    <button class="btn" type="button" title="calc" onclick="calculate()">Вычислить индекс массы</button>
+                </form>
+                <div id="results" class="text-center">Твой индекс массы появится тут</div>
+        </div>
+    </div>
+    <script src="bmi.js"></script>
+</body>
+</html>

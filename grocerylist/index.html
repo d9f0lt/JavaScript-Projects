@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Список покупок</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+    <script src="main.js"></script>
+</head>
+<body>
+    <h1>Лист покупок</h1>
+    <form action="add" method="get">
+        <label>Добавить: </label>
+        <input type="text" title="list" name="item">
+        <input type="submit" id="addNeed" value="Need">
+        <input type="submit" id="addHave" value="Have">
+    </form>
+    <h2>Нужно: </h2>
+        <ul class="list">
+            <li><input type="checkbox" title="listObject" name="item">Молоко<a href="#">&#10006;</a></li>
+            <li><input type="checkbox" title="listObject" name="item">Яйца<a href="#">&#10006;</a></li>
+            <li><input type="checkbox" title="listObject" name="item">Хлопья<a href="#">&#10006;</a></li>
+            <li><input type="checkbox" title="listObject" name="item">Мясо<a href="#">&#10006;</a></li>
+        </ul>
+    <h2>Имеем:</h2>
+        <ul class="list">
+            <li><input type="checkbox"  title="listObject" name="item" checked>Cметана<a href="#">&#10006;</a></li>
+            <li><input type="checkbox"  title="listObject" name="item" checked>Кефир<a href="#">&#10006;</a></li>
+            <li><input type="checkbox"  title="listObject" name="item" checked>Вода<a href="#">&#10006;</a></li>
+            <li><input type="checkbox"  title="listObject" name="item" checked>Квас<a href="#">&#10006;</a></li>
+        </ul>
+</body>
+</html>

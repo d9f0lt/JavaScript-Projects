@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Форма регистрации</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <h1 class="text-green text-center font-weight-bold" >Форма регистрации на JS</h1>
+    <h4 class="text-blue text-center font-weight-bold">Регистрация</h4>
+    <div class="container">
+        <br>
+        <div class="col-lg-5 m-auto d-block">
+            <form action="#" onsubmit="return validation()" class="bg-light">
+                <div class="form-group">
+                    <label for="name" class="font-weight-regular">Имя</label>
+                    <input type="text" title="name" name="name" id="name" class="form-control" autocomplete="off">
+                    <span id="Name" class="text-danger font-weight-regular"></span>
+                </div>
+                <div class="form-group">
+                    <label for="#" class="font-weight regular">Email</label>
+                    <input type="text" title="email" name="email" autocomplete="off" id="emails" class="form-control">
+                    <span id="emailids" class="text-danger font-weight-regular"></span>
+                </div>
+                <div class="form-group">
+                    <laber class="font-weight-regular" for="user">Логин</laber>
+                    <input type="text" name="user" title="user" id="user" class="form-control" autocomplete="off">
+                    <span id="username" class="text-danger font-weight-regular"></span>
+                </div>
+                <div class="form-group">
+                    <laber class="font-weight-regular">Пароль</laber>
+                    <input type="password" name="pass" title="pass" id="pass" class="form-control" autocomplete="off">
+                    <span id="passwords" class="text-danger font-weight-regular"></span>
+                </div>
+                <div class="form-group">
+                    <laber class="font-weight-regular">Подтверждение пароля</laber>
+                    <input type="password" name="conpass" title="conpass" id="conpass" class="form-control" autocomplete="off">
+                    <span id="confrmpass" class="text-danger font-weight-regular"></span>
+                </div>
+                <div class="form-group">
+                    <laber class="font-weight-regular">Номер телефона</laber>
+                    <input type="text" name="mobile" title="mobile" id="mobileNumber" class="form-control" autocomplete="off">
+                    <span id="mobileno" class="text-danger font-weight-regular"></span>
+                </div>
+                <input type="submit" value="Войти" name="submit" class="btn btn-primary" autocomplete="off">
+                <input type="reset" value="Сбросить" name="reset" autocomplete="off" class="btn">
+                &emsp;&emsp;&emsp;Уже есть аккаунт?<a href="login.html"> Войти</a>
+            </form>
+            <br><br>
+        </div>
+    </div>
+    <script type="text/javascript">
+        function validation() {
+            var name = document.getElementById("name").value;
+            var user = document.getElementById("user").value;
+            var pass = document.getElementById("pass").value;
+            var confirmpass = document.getElementById("conpass").value;
+            var mobileNumber = document.getElementById("mobileNumber").value;
+            var emails = document.getElementById("emails").value;
+
+            if (name == "") {
+                document.getElementById("Name").innerHTML = 
+                " ** Заполните поле имени";
+                return false;
+            }
+
+            if (emails == "") {
+                document.getElementById("emailids").innerHTML = 
+                " ** Заполните поле электронной почты";
+                return false;
+            }
+            
+            if (emails.indexOf("@") <= 0) {
+                document.getElementById("emailids").innerHTML = " ** Неккоректный адрес электронной почты";
+                return false;
+                }
+
+            if (
+                emails.charAt(emails.length - 4) != "." &&
+                emails.charAt(emails.length - 3) != "."
+                ) {
+                document.getElementById("emailids").innerHTML = " ** Неккоректный адрес электронной почты";
+                return false;
+                }
+
+            if (user == "") {
+                document.getElementById("username").innerHTML = " ** Введите свой логин"
+                return false;
+            }
+
+            if (!isNaN(user)) {
+                document.getElementById("username").innerHTML = " ** Можно вводить только буквы"
+                return false;
+            }
+
+            if (pass == "") {
+                document.getElementById("passwords").innerHTML = " ** Заполните поле пароля"
+                return false;
+            }
+
+            if (pass.lenght <= 5 || pass.lenght > 20) {
+                document.getElementById("passwords").innerHTML = " ** Пароль должен содержать от 5 до 20 символов";
+                return false
+            }
+
+            if (pass != confirmpass) {
+                document.getElementById("confrmpass").innerHTML = " ** Пароли не совпадают";
+                return false;
+            }
+
+            if (confirmpass == "") {
+                document.getElementById("confrmpass").innerHTML = " ** Введите пароль в поле подтверждения";
+                return false;
+            }
+
+            if (mobileNumber == "") {
+                document.getElementById("mobileno").innerHTML = " ** Заполните поле мобильного телефона";
+                return false;
+            }
+
+            if (isNan(mobileNumber)) {
+                document.getElementById("mobileno").innerHTML = " ** В поле мобильного телефона вводятся только цифры";
+                return false;
+            } 
+
+            if (mobileNumber.lenght != 11) {
+                document.getElementById("mobileno").innerHTML = " ** Мобильный телефон должен содержать 11 символов";
+                return false;
+            }
+        }
+    </script>
+</body>
+</html>

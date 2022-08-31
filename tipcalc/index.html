@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tipcalc</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Калькулятор чаевых</h1>
+        <div id="calculator">
+            <form>
+                <label>
+                    Стоимость счета?<br>
+                    $ <input type="text" id="billAmount"><br>
+                </label>
+                <label>
+                    Оценка услуги<br>
+                    <select id="serviceQuality">
+                        <option value="0" disabled selected>-- Выбери вариант --</option>
+                        <option value="0.3">30% - отлично</option>
+                        <option value="0.2">20% - хорошо</option>
+                        <option value="0.15">15% - неплохо</option>
+                        <option value="0.1">10% - плохо</option>
+                        <option value="0.05">5% - ужасно</option>
+                    </select>
+                </label><br>
+                <label>
+                    Сколько людей делят счет?<br>
+                    <input type="text" id="totalPeople"> человек
+                </label><br>
+                <button type="button" id="calculate"> Вычислить значение</button>
+            </form>
+        </div>
+        <div id="totalTip">
+            <sup>$</sup><span id="tip">0.00</span>
+            <small id="each">каждый</small>
+        </div>
+    </div>
+    <script src="tip.js"></script>
+</body>
+</html>
